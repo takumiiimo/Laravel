@@ -45,7 +45,7 @@
 
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
-                            @guest
+                        @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
 
                         @else
@@ -71,10 +71,9 @@
                     </div>
                 </div>
             </nav>
-            {{-- ここまでナビゲーションバー --}}
 
             <main class="py-4">
-                {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
+
                 @yield('content')
             </main>
         </div>
