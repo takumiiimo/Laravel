@@ -15,9 +15,9 @@ class NewsController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, News::$rules);
-        
         $news = new News;
         $form = $request->all();
+        
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
             $news->image_path = basename($path);
@@ -32,8 +32,16 @@ class NewsController extends Controller
         
         return redirect('admin/news/create');
     }
+    public function index(Request $request)
+    {
+        $cond_title = $request -> cond_title;
+        if ($cond_title !='') {
+            $posts = News::where('title', $cond_title)->get();
+        } else {
+            $posts = News::all();
+        }
+        return view('admin.news.index', ['posts' => $posts, 'cond_title' =>$cond_title]);
+    }
     
     
 }
-
-
