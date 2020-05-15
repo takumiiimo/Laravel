@@ -15,7 +15,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">タイトル</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                            <input type="text" class="form-control" name="cond_title" value={{ $cond_title }}>
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
@@ -43,6 +43,7 @@
                                     <th>{{ $news->id }}</th>
                                     <td>{{ str_limit($news->title, 100) }}</td>
                                     <td>{{ str_limit($news->body, 250) }}</td>
+                                    <td>
                                         <div>
                                             <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
                                         </div>
