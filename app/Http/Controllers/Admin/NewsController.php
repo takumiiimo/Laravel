@@ -50,7 +50,7 @@ class NewsController extends Controller
         }
         return view('admin.news.edit', ['news_form' => $news]);
     }
-    p”ublic function update(Request $request)
+    public function update(Request $request)
   {
       $this->validate($request, News::$rules);
       $news = News::find($request->id);

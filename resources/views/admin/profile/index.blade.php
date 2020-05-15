@@ -13,9 +13,9 @@
             <div class="col-md-8">
                 <form action="{{ action('Admin\ProfileController@index') }}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2">プロフィール</label>
+                        <label class="col-md-2">氏名</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="cond_title" value={{ $cond_title }}>
+                            <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
