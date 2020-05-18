@@ -45,7 +45,7 @@
                                     <th>{{ $profile->id }}</th>
                                     <td>{{ str_limit($profile->name, 100) }}</td>
                                     <td>{{ str_limit($profile->gender, 100) }}</td>
-                                    <td>{{ str_limit($profile->hobby, 250) }}</td>
+                                    <td>{{ str_limit($profile->hobby, 100) }}</td>
                                     <td>{{ str_limit($profile->introduction, 250) }}</td>
                                     <td>
                                         <div>
